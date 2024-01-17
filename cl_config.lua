@@ -23,6 +23,7 @@ function Config.OnHackDone(success, bank)
     TriggerEvent('mhacking:hide')
     if not success then return end
     TriggerServerEvent('qb-bankrobbery:server:setBankState', bank)
+    TriggerEvent('wais:addmissionxp:hackbank', 1) --added by pamela for wais battlepass
 end
 
 --- This will be triggered once an action happens that can drop evidence
@@ -38,6 +39,7 @@ end
 --- @return nil
 function Config.OnDrillingAction()
     TriggerServerEvent('hud:server:GainStress', math.random(4, 8))
+    TriggerEvent('wais:addmissionxp:drillsafe', 1) --added by pamela for wais battlepass
 end
 
 --- This is triggered whenever a robbery call is made by the alarm of a bank
